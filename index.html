@@ -1,1 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favorite Person ❤️</title>
 
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+  color: #5b2639;
+  text-align: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+.heart {
+  font-size: 65px;
+  animation: beat 1.2s infinite;
+}
+
+h1 {
+  font-size: 42px;
+  margin: 15px 0;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background: rgba(255,255,255,0.75);
+  border-radius: 25px;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 10px 30px rgba(150,60,90,0.15);
+}
+
+.card h2 {
+  margin-bottom: 12px;
+}
+
+button {
+  border: none;
+  background: #ff5c8a;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#message {
+  display: none;
+  margin-top: 20px;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.floating {
+  position: fixed;
+  bottom: -20px;
+  font-size: 25px;
+  animation: floatUp 5s linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="heart">❤️</div>
+
+  <h1>Happy Boyfriend Day 💕</h1>
+
+  <p class="subtitle">
+    A little website made specially for you 🥹💗
+  </p>
+
+  <div class="card">
+    <h2>💌 To My Favorite Person</h2>
+
+    <p>
+      You make ordinary days feel a little more special.
+      Thank you for being someone who makes me smile. ❤️
+    </p>
+
+    <button onclick="showMessage()">
+      Tap for a surprise 💝
+    </button>
+
+    <div id="message">
+      No matter how busy life gets,
+      I hope you always remember that you are special to me. 🫶🏻
+      <br><br>
+      Happy Boyfriend Day! ❤️
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🌷 Little Things I Love</h2>
+    <p>✨ Your smile</p>
+    <p>✨ Your presence</p>
+    <p>✨ The way you make me laugh</p>
+    <p>✨ All our little memories</p>
+  </div>
+
+  <div class="card">
+    <h2>💗 One Last Thing</h2>
+    <p>
+      This tiny website may be simple,
+      but it was made with lots of love.
+    </p>
+  </div>
+
+  <footer>
+    Made with ❤️ just for you
+  </footer>
+
+</div>
+
+<script>
+function showMessage() {
+  document.getElementById("message").style.display = "block";
+}
+
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "floating";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
+}
+
+setInterval(createHeart, 800);
+</script>
+
+</body>
+</html>
